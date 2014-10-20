@@ -1,0 +1,411 @@
+#  Useful Convience Funtions
+install.packages(c("ggplot2", "dplyr",  "stringr", "lubridate"))
+
+df %>% sample_n(5)
+
+
+## Install packages:
+install.packages(c("ggplot2", "dplyr",  "stringr", "lubridate"))
+2==3
+2!=3
+
+# 2014/10/08
+15 * 7.7
+x <- 3
+x
+x = 3
+x
+x <- 3:10
+x
+x = 1:30
+x * 3
+x <- 3:10
+x <- 1000
+sqrt(x)
+x*x
+31*31
+###### VIP************
+round(sqrt(x), 5)
+
+a <- 1:10
+a
+b <- c(4,4,4,5,5,6,6,6,7,8)
+b
+c <- c(1,1,1,1,1,10,10,10,10,10)
+c
+
+# Basic Statts
+mean(a)
+mean(b)
+sd(a)
+
+getwd()
+setwd("~")   # Goes to home directory
+
+setwd("C:/Users/Andrew/SkyDrive/workspace_R")
+
+# Which files are in this directory
+list.files()  # list all the files in the curent directory
+
+# to search some other direct
+dirpath <- "C:/Users/Andrew/SkyDrive/workspace_R"
+dir(dirpath, full=TRUE)
+ls()  
+seach()
+search()
+ls()
+v <- 9
+v
+ls()
+list=ls()
+list
+rm(list=ls())  # Very dangerous way to do: remove all the var,
+              # inside the function, assigning alwasy use "="
+
+search()
+
+# Get help
+
+help(ls)
+?ls
+help(rm)
+
+?Binomial
+??Binomial
+
+help.search
+
+
+## VIP
+ls(package:base) 
+
+ls(package:ggplot2) 
+
+read.csv
+
+getwd()
+presidents <- read.csv("data/USPresidents.csv", stringsAsFactor=FALSE, head=FALSE)
+head(presidents)
+
+presidents <- read.csv("USPresidents.csv")
+head(presidents)
+
+presidents <- read.csv("data/USPresidents.csv", skip=2)
+head(presidents)
+
+
+ls()
+list()
+presidents <- read.csv("data/USPresidents.csv")
+presidents
+ls()
+list.files()
+presidents
+write.csv(presidents, file="pres1.csv")
+
+head(presidents)
+tail(presidents)
+names(presidents)
+length(presidents)
+str(presidents)
+class(presidents)
+dim(presidents)
+
+help(str)
+# Vector:
+x <- c(TRUE, FALSE)
+x
+vec <- c(x = "sc")
+vec
+
+# vect has a class
+class(x)
+
+x <- c("a", "b")
+x <- c('a', 'd')
+
+y <- c("this a 'a")
+class(y)
+
+x <- 11:20
+x
+length(x)
+
+x[c(3:9)]
+x[c(1,3,5,9)]
+
+x[-c(2,4)]  # show except No. 2 and 4
+
+temp <- c(77, 55,63, 71,44, 68)
+temp > 68
+temp < 70  # evaluate 
+
+# how many days more than 68
+tf <- temp > 68 
+temp[tf]
+temp[temp < 68 && temp > 60]
+
+temp[temp == 68]
+
+presidents
+presidents$Home.State
+presidents$Home.State=="Virginia"
+
+df[r,c]
+dim
+df[c(1,3,7,9), 1]
+data.frame[c(1,3,7,9), 1]
+
+######### VIP
+library("ggplot2")
+require("ggplot2")
+
+summary(movies)
+movies$title[7]
+
+movies$title
+
+help(head)
+movies[ , c("mpaa", "Documentary")]   #
+
+movies[c("mpaa", "Documentary"), ]   #
+
+head(movies, 7)
+
+
+names(movies)  # column names
+tail(movies)
+
+movies$mpaa # Look at the mpaa column summary
+movies$title
+
+
+movies[ , c(TRUE,  TRUE, FALSE, FALSE, TRUE)]
+
+movies[grep('chicago', movies$title), 1]
+
+# 2014/10/15 Practice (Class 2 of 10):
+
+table(mpaa.movies$mpaa)  # NOt working:
+subset(movies, mpaa=='R')
+      
+notes <- help.search("aes", package="ggplot2")
+vec <- c(x = "SC", y = "SR", z= "SJ")
+class(x)
+ls()
+
+print(HW1_US_Counties)
+
+HW1_US_Counties[4, 14]
+unique(HW1_US_Counties)
+HW1_US_Counties
+str(HW1_US_Counties)
+table(mpaa.movies$mpaa)
+
+summary(movies)
+summary(presidents)
+summary(HW1_US_Counties)
+
+help(summary)
+data()
+vignette()
+
+lm(mpg~wt, data=mtcars)
+
+installed.packages()
+install.packages("dplyr")
+help(dplyr)
+
+library(dplyr)
+
+
+require(stats)
+x <- swiss$Education[1:25]
+y
+x
+sort(x); sort(x, partial = c(10, 15))
+sort(x)
+sort(x, partial = c(10, 15))
+
+
+#Using column Names of Interest
+movies[ , c("mpaa", 'Documentary') ]
+
+#Using column Names of Interest
+movies[ , c("mpaa", 'Documentary') ]
+
+#Using column Names of Interest
+movies[ , c("mpaa", 'Documentary') ]
+
+HW1_US_Counties[, c("CTYNAME", "STATE")]
+HW1_US_Counties[, c("CTYNAME", "STATE"  )]
+
+
+# 2014/10/15 class 3
+# do some examples from movie
+
+nrow(movies)
+dim(movies) [2]
+head(movies, 11)
+names(movies)
+names(movies)[6]
+row.names(movies)
+summary(movies)
+summary(movies$title)
+summary(movies$mpaa)
+str(movies)
+class(movies$title)
+class(movies$mpaa)
+
+unique(movies$mpaa)
+
+with(movies, moviews(year))
+movies$title
+
+# print all tile in 2005:
+condition <- (movies$year == 2000)
+movies$title[condition]
+length(movies$title[condition])
+sum(condition)
+
+# what about print all the colmuns:
+movies[condition,]
+dim(movies[condition,])
+
+# Today's new topics:
+help(NA)
+data()
+diamonds
+movies
+
+help(NA)
+
+airquality
+is.na()
+airquality$Ozon
+is.na()
+-is.na()
+airquality[!is.na(airquality$Ozone)]
+
+complete.cases(airquality)
+na.omit(airquality)
+tf <- is.na
+tf <- is.na(airquality$Solar.R)
+airquality$Solar.R[tf] <- 0 # assign the NA into "0"
+
+# this helps homework:
+duplicated(iris)
+
+duplicated(movies)
+duplicated()
+
+as.numeric(3.3)
+as.charater()
+
+# Factors in R
+
+class(iris$Species)
+iris$Species[1:5]
+
+str(mtcars)
+mtcars$gear
+mtcars$gear <- as.factor
+
+# "Factor" in R
+
+# The subset() fnction
+
+small_iris <- subset(iris, Sepal.Length > 7)
+small_iris
+subset(movies, mpaa == 'R')
+
+# table
+table(iris$Species)
+table(mtcars$gear)
+table(mtcars$gear, mtcars$cyl)
+table( mtcars$cyl, mtcars$gear)
+mtcars
+
+# with
+with(movies, table(year))
+with(movies, table(length > 200))
+
+# Cut (and range)
+
+range(airquality$Temp)
+cut((airquality$Temp), 5)
+cut((airquality$Temp), 5, lables=FALSE) 
+
+Tempbreaks=seq(50, 100, by=10)
+
+TempBuckets <- cut(airquality$Temp, breaks=Tempbreaks)
+summary(TempBuckets)
+
+# dplyr
+library (ggplot2)
+library(dplyr)
+glimpse(movies)
+
+pretty_movies <- tbl_df(movies)
+movies
+pretty_movies
+
+round(sqrt(1000), 3)
+require(magrittr)
+1000 %>% 
+
+# Filter(data, condition)
+    
+movies_df <- tbl_df(movies)
+movies_with_budget <- filter(movies_df, !is.na(budget))
+filter(movies, Documentary == 1) %>% nrow()
+
+good_comedies <- filter(movies, rating > 9, Comedy == 1)
+dim(good_comedies)
+
+movies %>% filter (rating > 8, Comedy == 1, votes > 100, year > 2000)
+
+select(movies_df, title, year, rating)
+
+select(movies_df, -c(budget, r1:r10, Animation, Documentary, Short, Romance))
+select(movies_df, contains("r"))
+select(movies_df, matches("r[0-9]"))  # just many ways to select 
+
+#Arrange:
+arrange(movies_df, rating)
+
+arrange(movies_df, desc(rating), desc(year))
+dplyr-???-13
+arrange(data, column_to_sort_by)!
+arrange(movies_df, desc(rating), desc(year))
+
+arrange(movies_df, desc(year), desc(rating))
+
+
+
+# Misc
+help(tbl_df)
+HW1_US_Counties
+
+misc <- tbl_df(HW1_US_Counties)
+misc
+glimpse(HW1_US_Counties)
+head(HW1_US_Counties)
+
+# My own test:
+********************
+# Create a data frame:
+df <- data.frame (id=1:4,
+                  weight=c(20,27,24,22),
+                  size=c("small", "large", "medium", "large"))
+
+df
+arrange(df, weight)       # sort column "wight"
+df[ order(df$weight), ]   # Use built-in R functions
+
+arrange(df, size, weight)         # Use arrange from plyr package
+df[ order(df$size, df$weight), ]  # Use built-in R functions
+
+df[]
+
+
