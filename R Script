@@ -1,6 +1,7 @@
 #  Useful Convience Funtions
 install.packages(c("ggplot2", "dplyr",  "stringr", "lubridate"))
 
+# Ramdomly sampling 5 lines in the data set:
 df %>% sample_n(5)
 
 
